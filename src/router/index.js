@@ -80,10 +80,10 @@ export const constantRouterMap = [
     meta: { title: '招聘管理', icon: 'example' },
     children: [
       {
-        path: 'enterprise', 
-        name: 'enterprise', 
-        component: () => import('@/views/table/enterprise'), 
-        meta: { title: '企业管理', icon: 'table'}
+        path: 'enterprise',
+        name: 'enterprise',
+        component: () => import('@/views/table/enterprise'),
+        meta: { title: '企业管理', icon: 'table' }
       },
       {
         path: 'recruit',
