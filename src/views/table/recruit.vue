@@ -1,6 +1,5 @@
 <template>
-<div>
-  <br>
+<div style="padding: 20px">
   <el-form :inline="true">
           <el-form-item label="职位名称">
 <el-input v-model="searchMap.jobname" placeholder="职位名称"></el-input></el-form-item>
@@ -42,13 +41,12 @@
           <el-table-column prop="type" label="任职方式" width="80"></el-table-column>
           <el-table-column prop="address" label="办公地址" width="80"></el-table-column>
           <el-table-column prop="eid" label="企业ID" width="80"></el-table-column>
-          <el-table-column prop="createtime" label="创建日期" width="80"></el-table-column>
+          <el-table-column prop="createtime" label="创建日期" width="150"></el-table-column>
           <el-table-column prop="state" label="状态" width="80"></el-table-column>
-          <el-table-column prop="url" label="网址" width="80"></el-table-column>
-          <el-table-column prop="label" label="标签" width="80"></el-table-column>
-          <el-table-column prop="content1" label="职位描述" width="80"></el-table-column>
-          <el-table-column prop="content2" label="职位要求" width="80"></el-table-column>
-
+          <el-table-column prop="url" label="网址" width="170"></el-table-column>
+          <el-table-column prop="label" label="标签" width="170"></el-table-column>
+          <el-table-column prop="content1" label="职位描述" width="170"></el-table-column>
+          <el-table-column prop="content2" label="职位要求" width="200"></el-table-column>
     <el-table-column
       fixed="right"
       label="操作"
@@ -67,7 +65,7 @@
       :page-size="10"
       layout="total, sizes, prev, pager, next, jumper"
       :total="total">
-    </el-pagination>  
+    </el-pagination>
   <el-dialog title="编辑" :visible.sync="dialogFormVisible">
     <el-form label-width="80px">
         <el-form-item label="职位名称"><el-input v-model="pojo.jobname"></el-input></el-form-item>
@@ -81,19 +79,19 @@
           </template>
         </el-form-item>
         <el-form-item label="办公地址"><el-input v-model="pojo.address"></el-input></el-form-item>
-        <el-form-item label="企业">         
-         
+        <el-form-item label="企业">
+
             <el-select v-model="pojo.eid" filterable placeholder="请选择">
               <el-option
                 v-for="item in enterpriseList"
                 :key="item.id"
                 :label="item.name"
-                :value="item.id">
+                :value="item.name">
               </el-option>
             </el-select>
-          
+
           </el-form-item>
-       
+
         <el-form-item label="状态">
           <el-switch v-model="pojo.state" active-value="1" inactive-value="0"></el-switch>
         </el-form-item>

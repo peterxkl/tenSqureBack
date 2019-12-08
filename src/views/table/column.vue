@@ -1,6 +1,5 @@
 <template>
-<div>
-  <br>
+<div style="padding: 20px">
   <el-form :inline="true">
           <el-form-item label="专栏名称">
 <el-input v-model="searchMap.name" placeholder="专栏名称"></el-input></el-form-item>
@@ -22,13 +21,13 @@
     :data="list"
     border
     style="width: 100%">
-          <el-table-column prop="id" label="ID" width="80"></el-table-column>
-          <el-table-column prop="name" label="专栏名称" width="200"></el-table-column>
-          <el-table-column prop="summary" label="专栏简介" width="380"></el-table-column>
-          <el-table-column prop="userid" label="用户ID" width="80"></el-table-column>
-          <el-table-column prop="createtime" label="申请日期" width="80"></el-table-column>
-          <el-table-column prop="checktime" label="审核日期" width="80"></el-table-column>
-          <el-table-column prop="state" label="状态" width="50"></el-table-column>
+          <el-table-column prop="id" label="ID"></el-table-column>
+          <el-table-column prop="name" label="专栏名称" ></el-table-column>
+          <el-table-column prop="summary" label="专栏简介" ></el-table-column>
+          <el-table-column prop="userid" label="用户ID" ></el-table-column>
+          <el-table-column prop="createtime" label="申请日期" ></el-table-column>
+          <el-table-column prop="checktime" label="审核日期" ></el-table-column>
+          <el-table-column prop="state" label="状态" ></el-table-column>
 
     <el-table-column
       fixed="right"
@@ -47,7 +46,7 @@
       :page-size="10"
       layout="total, sizes, prev, pager, next, jumper"
       :total="total">
-    </el-pagination>  
+    </el-pagination>
   <el-dialog title="编辑" :visible.sync="dialogFormVisible">
     <el-form label-width="80px">
         <el-form-item label="专栏名称"><el-input v-model="pojo.name"></el-input></el-form-item>
@@ -140,7 +139,7 @@ export default {
             this.fetchData() // 刷新数据
           }
         })
-      })      
+      })
     }
   }
 }

@@ -1,6 +1,5 @@
 <template>
-<div>
-  <br>
+<div style="padding: 20px">
   <el-form :inline="true">
           <el-form-item label="频道名称">
 <el-input v-model="searchMap.name" placeholder="频道名称"></el-input></el-form-item>
@@ -14,9 +13,9 @@
     :data="list"
     border
     style="width: 100%">
-          <el-table-column prop="id" label="ID" width="80"></el-table-column>
-          <el-table-column prop="name" label="频道名称" width="80"></el-table-column>
-          <el-table-column prop="state" label="状态" width="80"></el-table-column>
+          <el-table-column prop="id" label="ID" ></el-table-column>
+          <el-table-column prop="name" label="频道名称" ></el-table-column>
+          <el-table-column prop="state" label="状态" ></el-table-column>
 
     <el-table-column
       fixed="right"
@@ -36,7 +35,7 @@
       :page-size="10"
       layout="total, sizes, prev, pager, next, jumper"
       :total="total">
-    </el-pagination>  
+    </el-pagination>
   <el-dialog title="编辑" :visible.sync="dialogFormVisible">
     <el-form label-width="80px">
         <el-form-item label="频道名称"><el-input v-model="pojo.name"></el-input></el-form-item>
